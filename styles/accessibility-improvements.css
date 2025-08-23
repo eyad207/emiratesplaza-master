@@ -1,0 +1,111 @@
+/* Accessibility Improvements for Better Contrast and ARIA Support */
+
+/* Enhanced contrast for text elements */
+.text-gray-500 {
+  @apply text-gray-600;
+}
+
+.dark .text-gray-500 {
+  @apply text-gray-300;
+}
+
+.text-gray-400 {
+  @apply text-gray-600;
+}
+
+.dark .text-gray-400 {
+  @apply text-gray-200;
+}
+
+/* Enhanced contrast for muted text */
+.text-muted-foreground {
+  @apply text-gray-700;
+}
+
+.dark .text-muted-foreground {
+  @apply text-gray-200;
+}
+
+/* Better focus indicators */
+.focus-visible\:ring-2:focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2;
+}
+
+.dark .focus-visible\:ring-2:focus-visible {
+  @apply ring-blue-400 ring-offset-gray-900;
+}
+
+/* Enhanced button contrast */
+.bg-primary\/10 {
+  @apply bg-primary/20;
+}
+
+.dark .bg-primary\/10 {
+  @apply bg-primary/30;
+}
+
+/* Better border contrast for cards */
+.border-border\/50 {
+  @apply border-border/70;
+}
+
+.dark .border-border\/50 {
+  @apply border-border/80;
+}
+
+/* Enhanced hover states */
+.hover\:text-primary:hover {
+  @apply text-primary font-medium;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  .text-gray-500,
+  .text-gray-400,
+  .text-muted-foreground {
+    @apply text-black;
+  }
+  
+  .dark .text-gray-500,
+  .dark .text-gray-400,
+  .dark .text-muted-foreground {
+    @apply text-white;
+  }
+  
+  .border {
+    @apply border-2;
+  }
+  
+  .bg-primary\/10,
+  .bg-primary\/20,
+  .bg-primary\/30 {
+    @apply bg-primary/50;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .transition-all,
+  .transition-colors,
+  .transition-transform {
+    transition: none !important;
+  }
+  
+  .animate-spin,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
